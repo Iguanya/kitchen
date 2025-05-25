@@ -106,12 +106,11 @@ class BOM(WebsiteGenerator):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
-		from frappe.types import DF
-
 		from erpnext.manufacturing.doctype.bom_explosion_item.bom_explosion_item import BOMExplosionItem
 		from erpnext.manufacturing.doctype.bom_item.bom_item import BOMItem
 		from erpnext.manufacturing.doctype.bom_operation.bom_operation import BOMOperation
 		from erpnext.manufacturing.doctype.bom_scrap_item.bom_scrap_item import BOMScrapItem
+		from frappe.types import DF
 
 		allow_alternative_item: DF.Check
 		amended_from: DF.Link | None
@@ -125,11 +124,8 @@ class BOM(WebsiteGenerator):
 		company: DF.Link
 		conversion_rate: DF.Float
 		currency: DF.Link
-		default_source_warehouse: DF.Link | None
-		default_target_warehouse: DF.Link | None
 		description: DF.SmallText | None
 		exploded_items: DF.Table[BOMExplosionItem]
-		fg_based_operating_cost: DF.Check
 		has_variants: DF.Check
 		image: DF.AttachImage | None
 		inspection_required: DF.Check
@@ -138,7 +134,6 @@ class BOM(WebsiteGenerator):
 		item: DF.Link
 		item_name: DF.Data | None
 		items: DF.Table[BOMItem]
-		track_semi_finished_goods: DF.Check
 		operating_cost: DF.Currency
 		operating_cost_per_bom_quantity: DF.Currency
 		operations: DF.Table[BOMOperation]
@@ -152,7 +147,6 @@ class BOM(WebsiteGenerator):
 		raw_material_cost: DF.Currency
 		rm_cost_as_per: DF.Literal["Valuation Rate", "Last Purchase Rate", "Price List"]
 		route: DF.SmallText | None
-		routing: DF.Link | None
 		scrap_items: DF.Table[BOMScrapItem]
 		scrap_material_cost: DF.Currency
 		set_rate_of_sub_assembly_item_based_on_bom: DF.Check
@@ -161,11 +155,9 @@ class BOM(WebsiteGenerator):
 		show_operations: DF.Check
 		thumbnail: DF.Data | None
 		total_cost: DF.Currency
-		transfer_material_against: DF.Literal["", "Work Order", "Job Card"]
 		uom: DF.Link | None
 		web_long_description: DF.TextEditor | None
 		website_image: DF.AttachImage | None
-		with_operations: DF.Check
 	# end: auto-generated types
 
 	website = frappe._dict(

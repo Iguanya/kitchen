@@ -45,7 +45,7 @@
    "fieldtype": "Link",
    "ignore_user_permissions": 1,
    "in_list_view": 1,
-   "label": "Source Warehouse",
+   "label": "Source Store",
    "options": "Warehouse"
   },
   {
@@ -93,7 +93,7 @@
    "default": "0",
    "fieldname": "include_item_in_manufacturing",
    "fieldtype": "Check",
-   "label": "Include Item In Manufacturing"
+   "label": "Include Item In Cooking"
   },
   {
    "fieldname": "column_break_11",
@@ -111,13 +111,13 @@
   {
    "fieldname": "available_qty_at_source_warehouse",
    "fieldtype": "Float",
-   "label": "Available Qty at Source Warehouse",
+   "label": "Available Qty at Source Store",
    "read_only": 1
   },
   {
    "fieldname": "available_qty_at_wip_warehouse",
    "fieldtype": "Float",
-   "label": "Available Qty at WIP Warehouse",
+   "label": "Available Qty in Kitchen",
    "read_only": 1
   },
   {
@@ -149,13 +149,14 @@
  ],
  "istable": 1,
  "links": [],
- "modified": "2024-03-27 13:12:00.429838",
- "modified_by": "Administrator",
+ "modified": "2025-05-02 11:19:55.091436",
+ "modified_by": "georgemwangim254@gmail.com",
  "module": "Manufacturing",
  "name": "Work Order Item",
  "owner": "Administrator",
  "permissions": [],
  "quick_entry": 1,
+ "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

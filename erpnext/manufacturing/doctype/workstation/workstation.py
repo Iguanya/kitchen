@@ -42,11 +42,8 @@ class Workstation(Document):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
+		from erpnext.manufacturing.doctype.workstation_working_hour.workstation_working_hour import WorkstationWorkingHour
 		from frappe.types import DF
-
-		from erpnext.manufacturing.doctype.workstation_working_hour.workstation_working_hour import (
-			WorkstationWorkingHour,
-		)
 
 		description: DF.Text | None
 		holiday_list: DF.Link | None

@@ -26,16 +26,6 @@
   "column_break_ivyw",
   "currency",
   "conversion_rate",
-  "operations_section_section",
-  "with_operations",
-  "track_semi_finished_goods",
-  "column_break_23",
-  "transfer_material_against",
-  "routing",
-  "fg_based_operating_cost",
-  "column_break_joxb",
-  "default_source_warehouse",
-  "default_target_warehouse",
   "fg_based_section_section",
   "operating_cost_per_bom_quantity",
   "operations_section",
@@ -166,14 +156,6 @@
   },
   {
    "default": "0",
-   "description": "Manage cost of operations",
-   "fieldname": "with_operations",
-   "fieldtype": "Check",
-   "ignore_user_permissions": 1,
-   "label": "With Operations"
-  },
-  {
-   "default": "0",
    "fieldname": "inspection_required",
    "fieldtype": "Check",
    "label": "Quality Inspection Required"
@@ -211,14 +193,6 @@
    "options": "Company",
    "remember_last_selected_value": 1,
    "reqd": 1
-  },
-  {
-   "default": "Work Order",
-   "depends_on": "eval: doc.with_operations === 1 && doc.track_semi_finished_goods === 0",
-   "fieldname": "transfer_material_against",
-   "fieldtype": "Select",
-   "label": "Transfer Material Against",
-   "options": "\nWork Order\nJob Card"
   },
   {
    "default": "1",
@@ -260,13 +234,6 @@
   },
   {
    "depends_on": "with_operations",
-   "fieldname": "routing",
-   "fieldtype": "Link",
-   "label": "Routing",
-   "options": "Routing"
-  },
-  {
-   "depends_on": "with_operations",
    "fieldname": "operations",
    "fieldtype": "Table",
    "label": "Operations",
@@ -277,13 +244,13 @@
   {
    "fieldname": "materials_section",
    "fieldtype": "Section Break",
-   "label": "Raw Materials",
+   "label": "Ingredients",
    "oldfieldtype": "Section Break"
   },
   {
    "fieldname": "items",
    "fieldtype": "Table",
-   "label": "Items",
+   "label": "Ingredients",
    "oldfieldname": "bom_materials",
    "oldfieldtype": "Table",
    "options": "BOM Item",
@@ -489,10 +456,6 @@
    "label": "Show Operations"
   },
   {
-   "fieldname": "column_break_23",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_52",
    "fieldtype": "Column Break"
   },
@@ -530,13 +493,6 @@
    "fieldtype": "Tab Break",
    "label": "Connections",
    "show_dashboard": 1
-  },
-  {
-   "collapsible": 1,
-   "collapsible_depends_on": "eval:doc.with_operations",
-   "fieldname": "operations_section_section",
-   "fieldtype": "Section Break",
-   "label": "Operations"
   },
   {
    "fieldname": "process_loss_section",
@@ -588,16 +544,10 @@
    "label": "Scrap Items"
   },
   {
-   "default": "0",
-   "fieldname": "fg_based_operating_cost",
-   "fieldtype": "Check",
-   "label": "Finished Goods based Operating Cost"
-  },
-  {
    "depends_on": "fg_based_operating_cost",
    "fieldname": "fg_based_section_section",
    "fieldtype": "Section Break",
-   "label": "Finished Goods Based Operating Cost"
+   "label": "Finished Foods Based Operating Cost"
   },
   {
    "depends_on": "fg_based_operating_cost",
@@ -632,30 +582,6 @@
   {
    "fieldname": "column_break_oxbz",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "depends_on": "with_operations",
-   "description": "Users can consume raw materials and add semi-finished goods or final finished goods against the operation using job cards.",
-   "fieldname": "track_semi_finished_goods",
-   "fieldtype": "Check",
-   "label": "Track Semi Finished Goods"
-  },
-  {
-   "fieldname": "column_break_joxb",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "default_source_warehouse",
-   "fieldtype": "Link",
-   "label": "Default Source Warehouse",
-   "options": "Warehouse"
-  },
-  {
-   "fieldname": "default_target_warehouse",
-   "fieldtype": "Link",
-   "label": "Default Target Warehouse",
-   "options": "Warehouse"
   }
  ],
  "icon": "fa fa-sitemap",
@@ -663,7 +589,7 @@
  "image_field": "image",
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-03 16:24:47.518411",
+ "modified": "2025-05-02 12:20:10.821191",
  "modified_by": "Administrator",
  "module": "Manufacturing",
  "name": "BOM",
@@ -696,6 +622,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "search_fields": "item, item_name",
  "show_name_in_global_search": 1,
  "sort_field": "creation",
