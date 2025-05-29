@@ -147,6 +147,7 @@ class BOM(WebsiteGenerator):
 		raw_material_cost: DF.Currency
 		rm_cost_as_per: DF.Literal["Valuation Rate", "Last Purchase Rate", "Price List"]
 		route: DF.SmallText | None
+		routing: DF.Link | None
 		scrap_items: DF.Table[BOMScrapItem]
 		scrap_material_cost: DF.Currency
 		set_rate_of_sub_assembly_item_based_on_bom: DF.Check
@@ -155,9 +156,11 @@ class BOM(WebsiteGenerator):
 		show_operations: DF.Check
 		thumbnail: DF.Data | None
 		total_cost: DF.Currency
+		track_semi_finished_goods: DF.Check
 		uom: DF.Link | None
 		web_long_description: DF.TextEditor | None
 		website_image: DF.AttachImage | None
+		with_operations: DF.Check
 	# end: auto-generated types
 
 	website = frappe._dict(

@@ -29,6 +29,9 @@
   "fg_based_section_section",
   "operating_cost_per_bom_quantity",
   "operations_section",
+  "with_operations",
+  "track_semi_finished_goods",
+  "routing",
   "operations",
   "materials_section",
   "items",
@@ -230,6 +233,7 @@
    "fieldname": "operations_section",
    "fieldtype": "Section Break",
    "hide_border": 1,
+   "label": "Operations",
    "oldfieldtype": "Section Break"
   },
   {
@@ -582,6 +586,26 @@
   {
    "fieldname": "column_break_oxbz",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "with_operations",
+   "fieldtype": "Check",
+   "label": "With Operations"
+  },
+  {
+   "default": "0",
+   "fieldname": "track_semi_finished_goods",
+   "fieldtype": "Check",
+   "label": "Track semi Finished Goods"
+  },
+  {
+   "depends_on": "eval:doc.with_operations",
+   "fieldname": "routing",
+   "fieldtype": "Link",
+   "label": "Routing",
+   "options": "Routing",
+   "remember_last_selected_value": 1
   }
  ],
  "icon": "fa fa-sitemap",
@@ -589,7 +613,7 @@
  "image_field": "image",
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-02 12:20:10.821191",
+ "modified": "2025-05-29 12:18:56.935935",
  "modified_by": "Administrator",
  "module": "Manufacturing",
  "name": "BOM",
